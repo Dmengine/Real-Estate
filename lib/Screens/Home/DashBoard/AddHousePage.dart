@@ -33,7 +33,7 @@ class _AddPageState extends State<AddPage> {
   final picker = ImagePicker();
   ParanomalModel paranomalmodel;
   Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery,imageQuality: 90,maxHeight: MediaQuery.of(context).size.height*3.2,maxWidth: MediaQuery.of(context).size.width*3.2);
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
     setState(() {
       if (pickedFile != null) {
         _image = File(pickedFile.path);
@@ -357,15 +357,12 @@ class _AddPageState extends State<AddPage> {
     return new Scaffold(
       body: Hero(
           tag: tag,
-          child: Center(
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.height,
-                child:  Panorama(
-                  child: Image.file(image),
-                ),
-              )
-
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.height*0.8,
+            child:  Panorama(
+              child: Image.file(image),
+            ),
           )
       )
     );

@@ -27,19 +27,11 @@ class ThreeDPreview extends StatelessWidget {
                   ),
                 ),
             placeholder: (context, url) =>
-                Container(width: MediaQuery
-                    .of(context)
-                    .size
-                    .width,
-                    child: Center(
-                        child: CircularProgressIndicator())),
+                Container(width:MediaQuery.of(context).size.width,child: Center(child: CircularProgressIndicator())),
+
             errorWidget: (context, url, error) =>
-                Container(width: MediaQuery
-                    .of(context)
-                    .size
-                    .width,
-                    child: Center(
-                        child: Icon(Icons.error))),
+                Container(width:MediaQuery.of(context).size.width,child: Center(child: Icon(Icons.error))),
+
           ),
         ),
             Positioned(
